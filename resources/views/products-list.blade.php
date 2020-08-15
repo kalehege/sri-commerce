@@ -13,7 +13,7 @@
                             <div class="mt-4">
                                 <h3 class="text-gray-500 text-xs tracking-widest title-font inline uppercase">Only <span class="text-blue-800 font-bold italic">{{ $product->items_available }}</span> left</h3>
                                 <h2 class="text-gray-900 title-font text-lg font-medium my-6">{{ \Illuminate\Support\Str::title($product->name) }}</h2>
-                                <a href="{{ route('checkout') }}" class="bg-blue-300 hover:bg-blue-700 text-blue-800 hover:text-white p-4 block rounded font-bold italic">{{ $product->price }} LKR</a>
+                                <a href="{{ route('checkout', $product) }}" class="bg-blue-300 hover:bg-blue-700 text-blue-800 hover:text-white p-4 block rounded font-bold italic">{{ $product->price }} LKR</a>
                             </div>
                         </div>
                     </div>

@@ -3,7 +3,12 @@
 @section('content')
     <div class="flex items-center mt-12">
         <div class="md:w-1/2 md:mx-auto">
-            <form action="/" class="bg-white rounded-lg w-full shadow-sm px-6 pt-2">
+            <x-pay-here-checkout-form
+                :payable="$payment"
+                success-url="{{ route('checkout.success') }}"
+                cancelled-url="{{ route('checkout.cancelled') }}"
+                form-class="bg-white rounded w-full shadow-sm px-6 pt-2"
+            >
                 <input type="hidden" name="items" value="">
                 <p class="text-2xl mb-6 mt-4">You are almost there!</p>
                 <div class="flex flex-wrap -mx-3 mb-6">
@@ -67,7 +72,7 @@
                 <button class="w-full bg-blue-600 hover:bg-blue-800 text-white font-bold py-4 mb-6 rounded focus:outline-none focus:shadow-outline" type="submit">
                     Pay Now
                 </button>
-            </form>
+            </x-pay-here-checkout-form>
         </div>
     </div>
 @endsection

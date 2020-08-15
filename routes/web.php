@@ -12,7 +12,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', 'MyProductsController@index')
         ->name('my-products');
 
-    Route::get('/checkout', 'CheckoutController@show')
+    Route::get('/checkout/success', 'CheckoutController@success')
+        ->name('checkout.success');
+
+    Route::get('/checkout/cancelled', 'CheckoutController@cancelled')
+        ->name('checkout.cancelled');
+
+    Route::get('/checkout/{product}', 'CheckoutController@show')
         ->name('checkout');
 });
 
