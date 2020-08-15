@@ -13,7 +13,10 @@ class CheckoutController extends Controller
         $payment = Payment::make($product, $request->user(), $product->price);
 
         return view('checkout')
-            ->with('payment', $payment);
+            ->with([
+                'payment' => $payment,
+                'product' => $product,
+            ]);
     }
 
     public function success(Request $request)

@@ -9,7 +9,7 @@
                 cancelled-url="{{ route('checkout.cancelled') }}"
                 form-class="bg-white rounded w-full shadow-sm px-6 pt-2"
             >
-                <input type="hidden" name="items" value="">
+                <input type="hidden" name="items" value="{{ $product->name }}">
                 <p class="text-2xl mb-6 mt-4">You are almost there!</p>
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-1/2 px-3">
